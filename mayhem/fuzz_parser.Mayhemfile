@@ -1,0 +1,10 @@
+project: sqllogictest-rs
+target: fuzz-parser
+
+image: ghcr.io/nottirb/sqllogictest-rs:latest
+
+cmds:
+    - cmd: /fuzz_parser
+
+testsuite:
+    - file://mayhem/testsuite/parser

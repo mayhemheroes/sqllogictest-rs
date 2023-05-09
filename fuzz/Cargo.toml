@@ -1,0 +1,24 @@
+[package]
+name = "sqllogictest-rs-fuzz"
+version = "0.0.0"
+authors = ["Automatically generated"]
+publish = false
+edition = "2021"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+honggfuzz = "0.5.55"
+
+[dependencies.sqllogictest]
+path = "../sqllogictest"
+
+# Prevent this from interfering with workspaces
+[workspace]
+members = ["."]
+
+# Create a binary for each fuzz target
+[[bin]]
+name = "fuzz_parser"
+path = "fuzz_targets/fuzz_parser.rs"
