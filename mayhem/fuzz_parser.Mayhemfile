@@ -1,0 +1,8 @@
+project: sqllogictest-rs
+target: fuzz-parser
+
+cmds:
+    - cmd: /fuzz_parser
+
+testsuite:
+    - file://mayhem/testsuite/parser
